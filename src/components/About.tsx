@@ -1,5 +1,6 @@
 import { Target, Eye, Heart, Sparkles, Users, Leaf, Shield, Clock } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import aboutPool from "@/assets/about-pool.jpg";
 
 const valores = [
   {
@@ -83,27 +84,31 @@ const About = () => {
           </div>
 
           <div className="relative">
-            <div className="aspect-square bg-gradient-to-br from-primary/20 to-accent/20 rounded-3xl p-8 flex items-center justify-center">
-              <div className="grid grid-cols-2 gap-4 w-full max-w-sm">
-                <Card className="bg-card border-0 shadow-lg card-hover">
-                  <CardContent className="p-6 text-center">
-                    <Target className="h-8 w-8 text-primary mx-auto mb-3" />
-                    <h4 className="font-display font-bold text-foreground">Missão</h4>
-                    <p className="text-xs text-muted-foreground mt-2">
-                      Oferecer soluções sustentáveis e acessíveis
-                    </p>
-                  </CardContent>
-                </Card>
-                <Card className="bg-card border-0 shadow-lg card-hover">
-                  <CardContent className="p-6 text-center">
-                    <Eye className="h-8 w-8 text-accent mx-auto mb-3" />
-                    <h4 className="font-display font-bold text-foreground">Visão</h4>
-                    <p className="text-xs text-muted-foreground mt-2">
-                      Ser referência regional em piscinas
-                    </p>
-                  </CardContent>
-                </Card>
-              </div>
+            <img 
+              src={aboutPool} 
+              alt="Produtos profissionais para tratamento de piscinas" 
+              className="w-full rounded-3xl shadow-xl object-cover aspect-square"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent rounded-3xl" />
+            <div className="absolute bottom-6 left-6 right-6 grid grid-cols-2 gap-4">
+              <Card className="bg-card/95 backdrop-blur border-0 shadow-lg">
+                <CardContent className="p-4 text-center">
+                  <Target className="h-6 w-6 text-primary mx-auto mb-2" />
+                  <h4 className="font-display font-bold text-foreground text-sm">Missão</h4>
+                  <p className="text-xs text-muted-foreground mt-1">
+                    Soluções sustentáveis e acessíveis
+                  </p>
+                </CardContent>
+              </Card>
+              <Card className="bg-card/95 backdrop-blur border-0 shadow-lg">
+                <CardContent className="p-4 text-center">
+                  <Eye className="h-6 w-6 text-accent mx-auto mb-2" />
+                  <h4 className="font-display font-bold text-foreground text-sm">Visão</h4>
+                  <p className="text-xs text-muted-foreground mt-1">
+                    Referência regional em piscinas
+                  </p>
+                </CardContent>
+              </Card>
             </div>
           </div>
         </div>

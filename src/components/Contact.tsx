@@ -1,6 +1,7 @@
 import { Phone, Mail, MapPin, Clock, Facebook, Instagram, MessageCircle } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import contactPool from "@/assets/contact-pool.jpg";
 
 const contactInfo = [
   {
@@ -105,35 +106,38 @@ const Contact = () => {
             </div>
           </div>
 
-          {/* CTA Card */}
-          <div className="relative">
-            <Card className="bg-hero-gradient border-0 shadow-xl overflow-hidden h-full">
-              <CardContent className="p-8 md:p-12 flex flex-col justify-center h-full relative z-10">
-                <div className="absolute inset-0 bg-hero-overlay" />
-                <div className="relative z-10 text-center">
-                  <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-primary-foreground/20 mb-6">
-                    <MessageCircle className="h-10 w-10 text-primary-foreground" />
-                  </div>
-                  <h3 className="text-2xl md:text-3xl font-display font-bold text-primary-foreground mb-4">
-                    Atendimento rápido pelo WhatsApp
-                  </h3>
-                  <p className="text-primary-foreground/90 mb-8 max-w-md mx-auto">
-                    Tire suas dúvidas, faça seu pedido ou solicite um orçamento 
-                    diretamente pelo nosso WhatsApp.
-                  </p>
-                  <Button variant="hero" size="xl" asChild>
-                    <a
-                      href="https://wa.me/5519997867681"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <Phone className="h-5 w-5" />
-                      Chamar no WhatsApp
-                    </a>
-                  </Button>
+          {/* CTA Card with Image */}
+          <div className="relative rounded-3xl overflow-hidden shadow-xl">
+            <img 
+              src={contactPool} 
+              alt="Piscina residencial com água cristalina" 
+              className="w-full h-full object-cover absolute inset-0"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/70 to-primary/40" />
+            <div className="relative z-10 p-8 md:p-12 flex flex-col justify-end min-h-[400px]">
+              <div className="text-center">
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary-foreground/20 mb-6">
+                  <MessageCircle className="h-8 w-8 text-primary-foreground" />
                 </div>
-              </CardContent>
-            </Card>
+                <h3 className="text-2xl md:text-3xl font-display font-bold text-primary-foreground mb-4">
+                  Atendimento rápido pelo WhatsApp
+                </h3>
+                <p className="text-primary-foreground/90 mb-8 max-w-md mx-auto">
+                  Tire suas dúvidas, faça seu pedido ou solicite um orçamento 
+                  diretamente pelo nosso WhatsApp.
+                </p>
+                <Button variant="hero" size="xl" asChild>
+                  <a
+                    href="https://wa.me/5519997867681"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Phone className="h-5 w-5" />
+                    Chamar no WhatsApp
+                  </a>
+                </Button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
