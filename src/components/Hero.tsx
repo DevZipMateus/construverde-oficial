@@ -27,7 +27,7 @@ const Hero = () => {
         style={{ backgroundImage: `url(${heroBg})` }}
       />
       {/* Dark Overlay for better text readability */}
-      <div className="absolute inset-0 bg-gradient-to-b from-primary/50 via-primary/40 to-primary/55" />
+      <div className="absolute inset-0 bg-gradient-to-b from-sky-900/50 via-sky-800/40 to-sky-900/55" />
       
       {/* Decorative Elements */}
       <div className="absolute inset-0 overflow-hidden">
