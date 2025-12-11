@@ -2,6 +2,8 @@ import { Droplet, FlaskConical, Sparkles, Filter, Waves, Package, ArrowRight } f
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import diskPiscina from "@/assets/disk-piscina.jpg";
+import poolAccessories from "@/assets/pool-accessories.jpg";
+import poolCondominio from "@/assets/pool-condominio.jpg";
 
 const produtos = [
   {
@@ -87,6 +89,34 @@ const Products = () => {
               </CardContent>
             </Card>
           ))}
+        </div>
+
+        {/* Image Gallery */}
+        <div className="grid md:grid-cols-2 gap-6 mb-16">
+          <div className="relative rounded-2xl overflow-hidden shadow-lg group">
+            <img 
+              src={poolAccessories} 
+              alt="Acessórios para limpeza de piscinas - peneiras, escovas e aspiradores" 
+              className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-primary/70 to-transparent" />
+            <div className="absolute bottom-4 left-4 right-4">
+              <h4 className="text-primary-foreground font-display font-bold text-xl">Acessórios completos</h4>
+              <p className="text-primary-foreground/80 text-sm">Tudo para limpeza e manutenção</p>
+            </div>
+          </div>
+          <div className="relative rounded-2xl overflow-hidden shadow-lg group">
+            <img 
+              src={poolCondominio} 
+              alt="Piscina de condomínio com água cristalina" 
+              className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-primary/70 to-transparent" />
+            <div className="absolute bottom-4 left-4 right-4">
+              <h4 className="text-primary-foreground font-display font-bold text-xl">Atendemos condomínios</h4>
+              <p className="text-primary-foreground/80 text-sm">Soluções para grandes volumes</p>
+            </div>
+          </div>
         </div>
 
         {/* Segmentos */}
