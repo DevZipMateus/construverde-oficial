@@ -48,7 +48,7 @@ const Hero = () => {
 
           {/* Main Title - H1 */}
           <h1 className="font-display text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-primary-foreground mb-6 animate-slide-up">
-            Construverde Material de Construção
+            Construverde
           </h1>
 
           {/* Subtitle - H2 */}
