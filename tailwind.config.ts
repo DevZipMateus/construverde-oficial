@@ -13,6 +13,10 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        sans: ["Open Sans", "system-ui", "sans-serif"],
+        display: ["Montserrat", "system-ui", "sans-serif"],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -62,6 +66,16 @@ export default {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+      },
+      boxShadow: {
+        'glow': 'var(--glow-primary)',
+        'glow-accent': 'var(--glow-accent)',
+      },
+      backgroundImage: {
+        'hero-gradient': 'var(--hero-gradient)',
+        'hero-overlay': 'var(--hero-overlay)',
+        'card-gradient': 'var(--card-gradient)',
+        'section-gradient': 'var(--section-gradient)',
       },
       keyframes: {
         "accordion-down": {
