@@ -1,6 +1,7 @@
 import { Droplet, FlaskConical, Sparkles, Filter, Waves, Package, ArrowRight } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import diskPiscina from "@/assets/disk-piscina.jpg";
 
 const produtos = [
   {
@@ -125,6 +126,15 @@ const Products = () => {
               </Button>
             </div>
           </div>
+        </div>
+
+        {/* Banner Disk Piscina */}
+        <div className="mt-16">
+          <img 
+            src={diskPiscina} 
+            alt="Disk Piscina Construverde - Tudo para sua piscina com entrega em domicílio" 
+            className="w-full max-w-4xl mx-auto rounded-2xl shadow-xl"
+          />
         </div>
       </div>
     </section>
