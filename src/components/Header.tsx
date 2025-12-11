@@ -38,7 +38,7 @@ const Header = () => {
       });
     }
   };
-  return <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-background ${isScrolled ? "shadow-md" : ""}`}>
+  return <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-primary ${isScrolled ? "shadow-md" : ""}`}>
       <div className="container-custom">
         <div className="flex h-20 items-center justify-between">
           {/* Logo */}
@@ -48,7 +48,7 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
-            {navItems.map(item => <button key={item.href} onClick={() => handleNavClick(item.href)} className="text-foreground/80 hover:text-primary font-medium transition-colors duration-200">
+            {navItems.map(item => <button key={item.href} onClick={() => handleNavClick(item.href)} className="text-primary-foreground/90 hover:text-primary-foreground font-medium transition-colors duration-200">
                 {item.label}
               </button>)}
             <Button asChild size="lg">
@@ -60,7 +60,7 @@ const Header = () => {
           </nav>
 
           {/* Mobile Menu Button */}
-          <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="md:hidden p-2 text-foreground" aria-label={isMenuOpen ? "Fechar menu" : "Abrir menu"}>
+          <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="md:hidden p-2 text-primary-foreground" aria-label={isMenuOpen ? "Fechar menu" : "Abrir menu"}>
             {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
         </div>
