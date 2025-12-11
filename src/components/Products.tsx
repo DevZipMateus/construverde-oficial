@@ -128,12 +128,11 @@ const Products = () => {
           </div>
         </div>
 
-        {/* Banner Disk Piscina */}
-        <div className="mt-16">
+        <div className="mt-16 flex justify-center">
           <img 
             src={diskPiscina} 
             alt="Disk Piscina Construverde - Tudo para sua piscina com entrega em domicílio" 
-            className="w-full max-w-4xl mx-auto rounded-2xl shadow-xl"
+            className="w-full max-w-md rounded-2xl shadow-xl"
           />
         </div>
       </div>
