@@ -33,9 +33,9 @@ const Hero = () => {
           </div>
 
           {/* Main Title - H1 */}
-          <div className="flex items-center justify-center gap-4 mb-6 animate-slide-up">
-            <img src={heroLogo} alt="Construverde Logo" className="h-32 md:h-20 lg:h-24 w-auto" />
-            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold" style={{ color: '#7bff23' }}>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-6 animate-slide-up">
+            <img src={heroLogo} alt="Construverde Logo" className="h-20 md:h-20 lg:h-24 w-auto" />
+            <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-center" style={{ color: '#7bff23' }}>
               Construverde
             </h1>
           </div>
