@@ -70,7 +70,7 @@ const VitrineSection = () => {
               className="group bg-[#7bff23] hover:bg-[#6ae01f] text-slate-900"
             >
               <Link to="/vitrine">
-                Visitar Vitrine
+                Compre online
                 <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Link>
             </Button>
