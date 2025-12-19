@@ -4,56 +4,40 @@ import { Button } from "@/components/ui/button";
 import diskPiscina from "@/assets/disk-piscina.jpg";
 import poolAccessories from "@/assets/pool-accessories.jpg";
 import poolCondominio from "@/assets/pool-condominio.jpg";
-
-const produtos = [
-  {
-    icon: FlaskConical,
-    title: "Cloros",
-    description: "Cloro granulado, líquido e em pastilhas para tratamento eficaz da água.",
-    color: "bg-primary/10 text-primary",
-  },
-  {
-    icon: Droplet,
-    title: "Sulfato de alumínio",
-    description: "Produto essencial para clarificação e decantação de impurezas da água.",
-    color: "bg-accent/10 text-accent",
-  },
-  {
-    icon: Sparkles,
-    title: "Clarificantes",
-    description: "Deixe sua piscina cristalina com nossos clarificantes de alta qualidade.",
-    color: "bg-primary/10 text-primary",
-  },
-  {
-    icon: Waves,
-    title: "Algicidas",
-    description: "Previna e elimine algas com produtos seguros e eficientes.",
-    color: "bg-accent/10 text-accent",
-  },
-  {
-    icon: Filter,
-    title: "Barrilhas",
-    description: "Ajuste o pH da sua piscina para manter a água equilibrada e saudável.",
-    color: "bg-primary/10 text-primary",
-  },
-  {
-    icon: Package,
-    title: "Acessórios",
-    description: "Peneiras, escovas, aspiradores e tudo mais para limpeza completa.",
-    color: "bg-accent/10 text-accent",
-  },
-];
-
-const segmentos = [
-  "Residências",
-  "Condomínios",
-  "Clubes e academias",
-  "Empresas de manutenção",
-];
-
+const produtos = [{
+  icon: FlaskConical,
+  title: "Cloros",
+  description: "Cloro granulado, líquido e em pastilhas para tratamento eficaz da água.",
+  color: "bg-primary/10 text-primary"
+}, {
+  icon: Droplet,
+  title: "Sulfato de alumínio",
+  description: "Produto essencial para clarificação e decantação de impurezas da água.",
+  color: "bg-accent/10 text-accent"
+}, {
+  icon: Sparkles,
+  title: "Clarificantes",
+  description: "Deixe sua piscina cristalina com nossos clarificantes de alta qualidade.",
+  color: "bg-primary/10 text-primary"
+}, {
+  icon: Waves,
+  title: "Algicidas",
+  description: "Previna e elimine algas com produtos seguros e eficientes.",
+  color: "bg-accent/10 text-accent"
+}, {
+  icon: Filter,
+  title: "Barrilhas",
+  description: "Ajuste o pH da sua piscina para manter a água equilibrada e saudável.",
+  color: "bg-primary/10 text-primary"
+}, {
+  icon: Package,
+  title: "Acessórios",
+  description: "Peneiras, escovas, aspiradores e tudo mais para limpeza completa.",
+  color: "bg-accent/10 text-accent"
+}];
+const segmentos = ["Residências", "Condomínios", "Clubes e academias", "Empresas de manutenção"];
 const Products = () => {
-  return (
-    <section id="produtos" className="section-padding bg-background">
+  return <section id="produtos" className="section-padding bg-background">
       <div className="container-custom">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
@@ -71,11 +55,7 @@ const Products = () => {
 
         {/* Products Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-          {produtos.map((produto, index) => (
-            <Card
-              key={produto.title}
-              className="bg-card-gradient border border-border/50 shadow-sm card-hover group overflow-hidden"
-            >
+          {produtos.map((produto, index) => <Card key={produto.title} className="bg-card-gradient border border-border/50 shadow-sm card-hover group overflow-hidden">
               <CardContent className="p-6">
                 <div className={`inline-flex items-center justify-center w-14 h-14 rounded-2xl ${produto.color} mb-4 group-hover:scale-110 transition-transform`}>
                   <produto.icon className="h-7 w-7" />
@@ -87,18 +67,13 @@ const Products = () => {
                   {produto.description}
                 </p>
               </CardContent>
-            </Card>
-          ))}
+            </Card>)}
         </div>
 
         {/* Image Gallery */}
         <div className="grid md:grid-cols-2 gap-6 mb-16">
           <div className="relative rounded-2xl overflow-hidden shadow-lg group">
-            <img 
-              src={poolAccessories} 
-              alt="Acessórios para limpeza de piscinas - peneiras, escovas e aspiradores" 
-              className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
-            />
+            <img src={poolAccessories} alt="Acessórios para limpeza de piscinas - peneiras, escovas e aspiradores" className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500" />
             <div className="absolute inset-0 bg-gradient-to-t from-primary/70 to-transparent" />
             <div className="absolute bottom-4 left-4 right-4">
               <h4 className="text-primary-foreground font-display font-bold text-xl">Acessórios completos</h4>
@@ -106,11 +81,7 @@ const Products = () => {
             </div>
           </div>
           <div className="relative rounded-2xl overflow-hidden shadow-lg group">
-            <img 
-              src={poolCondominio} 
-              alt="Piscina de condomínio com água cristalina" 
-              className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
-            />
+            <img src={poolCondominio} alt="Piscina de condomínio com água cristalina" className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500" />
             <div className="absolute inset-0 bg-gradient-to-t from-primary/70 to-transparent" />
             <div className="absolute bottom-4 left-4 right-4">
               <h4 className="text-primary-foreground font-display font-bold text-xl">Atendemos condomínios</h4>
@@ -131,12 +102,10 @@ const Products = () => {
                 preços competitivos.
               </p>
               <ul className="space-y-3">
-                {segmentos.map((segmento) => (
-                  <li key={segmento} className="flex items-center gap-3">
+                {segmentos.map(segmento => <li key={segmento} className="flex items-center gap-3">
                     <div className="w-2 h-2 rounded-full bg-primary" />
                     <span className="text-foreground font-medium">{segmento}</span>
-                  </li>
-                ))}
+                  </li>)}
               </ul>
             </div>
             <div className="bg-card rounded-2xl p-8 shadow-lg text-center">
@@ -159,15 +128,9 @@ const Products = () => {
         </div>
 
         <div className="mt-16 flex justify-center">
-          <img 
-            src={diskPiscina} 
-            alt="Disk Piscina Construverde - Tudo para sua piscina com entrega em domicílio" 
-            className="w-full max-w-md rounded-2xl shadow-xl"
-          />
+          
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Products;
