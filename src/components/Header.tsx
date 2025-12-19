@@ -59,7 +59,7 @@ const Header = () => {
       });
     }
   };
-  return <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-background ${isScrolled ? "shadow-md" : ""}`}>
+  return <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-primary ${isScrolled ? "shadow-md" : ""}`}>
       <div className="container-custom">
         <div className="flex h-20 items-center justify-between">
           {/* Logo */}
@@ -70,7 +70,7 @@ const Header = () => {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
             {navItems.map(item => (
-              <button key={item.href} onClick={() => handleNavClick(item)} className="text-foreground/80 hover:text-primary font-medium transition-colors duration-200">
+              <button key={item.href} onClick={() => handleNavClick(item)} className="text-primary-foreground/80 hover:text-white font-medium transition-colors duration-200">
                 {item.label}
               </button>
             ))}
@@ -83,16 +83,16 @@ const Header = () => {
           </nav>
 
           {/* Mobile Menu Button */}
-          <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="md:hidden p-2 text-foreground" aria-label={isMenuOpen ? "Fechar menu" : "Abrir menu"}>
+          <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="md:hidden p-2 text-primary-foreground" aria-label={isMenuOpen ? "Fechar menu" : "Abrir menu"}>
             {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
         </div>
 
         {isMenuOpen && (
-          <nav className="md:hidden absolute top-full left-0 right-0 bg-background border-t border-border shadow-lg">
+          <nav className="md:hidden absolute top-full left-0 right-0 bg-primary border-t border-primary-foreground/20 shadow-lg">
             <div className="container-custom py-4 flex flex-col gap-2">
               {navItems.map(item => (
-                <button key={item.href} onClick={() => handleNavClick(item)} className="text-foreground/80 hover:text-primary font-medium py-3 px-4 rounded-lg hover:bg-muted transition-colors text-left">
+                <button key={item.href} onClick={() => handleNavClick(item)} className="text-primary-foreground/80 hover:text-white font-medium py-3 px-4 rounded-lg hover:bg-primary-foreground/10 transition-colors text-left">
                   {item.label}
                 </button>
               ))}
