@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import logo from "@/assets/logo.png";
 const navItems = [{
   label: "Início",
@@ -12,12 +13,19 @@ const navItems = [{
   label: "Produtos",
   href: "#produtos"
 }, {
+  label: "Vitrine",
+  href: "/vitrine",
+  isRoute: true
+}, {
   label: "Contato",
   href: "#contato"
 }];
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
@@ -25,9 +33,22 @@ const Header = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-  const handleNavClick = (href: string) => {
+
+  const handleNavClick = (item: typeof navItems[0]) => {
     setIsMenuOpen(false);
-    const element = document.querySelector(href);
+    
+    if (item.isRoute) {
+      navigate(item.href);
+      return;
+    }
+    
+    // If we're not on home page, navigate to home first
+    if (location.pathname !== "/") {
+      navigate("/" + item.href);
+      return;
+    }
+    
+    const element = document.querySelector(item.href);
     if (element) {
       const headerOffset = 80;
       const elementPosition = element.getBoundingClientRect().top;
@@ -48,9 +69,11 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
-            {navItems.map(item => <button key={item.href} onClick={() => handleNavClick(item.href)} className="text-foreground/80 hover:text-primary font-medium transition-colors duration-200">
+            {navItems.map(item => (
+              <button key={item.href} onClick={() => handleNavClick(item)} className="text-foreground/80 hover:text-primary font-medium transition-colors duration-200">
                 {item.label}
-              </button>)}
+              </button>
+            ))}
             <Button asChild size="lg">
               <a href="https://wa.me/5519997867681" target="_blank" rel="noopener noreferrer">
                 <Phone className="h-4 w-4" />
@@ -65,12 +88,14 @@ const Header = () => {
           </button>
         </div>
 
-        {/* Mobile Navigation */}
-        {isMenuOpen && <nav className="md:hidden absolute top-full left-0 right-0 bg-background border-t border-border shadow-lg">
+        {isMenuOpen && (
+          <nav className="md:hidden absolute top-full left-0 right-0 bg-background border-t border-border shadow-lg">
             <div className="container-custom py-4 flex flex-col gap-2">
-              {navItems.map(item => <button key={item.href} onClick={() => handleNavClick(item.href)} className="text-foreground/80 hover:text-primary font-medium py-3 px-4 rounded-lg hover:bg-muted transition-colors text-left">
+              {navItems.map(item => (
+                <button key={item.href} onClick={() => handleNavClick(item)} className="text-foreground/80 hover:text-primary font-medium py-3 px-4 rounded-lg hover:bg-muted transition-colors text-left">
                   {item.label}
-                </button>)}
+                </button>
+              ))}
               <Button asChild className="mt-2">
                 <a href="https://wa.me/5519997867681" target="_blank" rel="noopener noreferrer">
                   <Phone className="h-4 w-4" />
@@ -78,7 +103,8 @@ const Header = () => {
                 </a>
               </Button>
             </div>
-          </nav>}
+          </nav>
+        )}
       </div>
     </header>;
 };
