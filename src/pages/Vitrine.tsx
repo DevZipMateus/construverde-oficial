@@ -13,12 +13,14 @@ const Vitrine = () => {
     <div className="h-screen w-full flex flex-col overflow-hidden">
       <Header />
       
-      <main className="flex-1 pt-20 overflow-hidden">
+      <main className="flex-1 pt-20 overflow-hidden relative">
         <iframe
           src="https://construrverde.egestor.com.br/vitrine/"
           title="Vitrine Construverde"
           className="w-full h-full border-none"
         />
+        {/* Overlay para esconder badge do MonteSite */}
+        <div className="absolute bottom-0 left-0 right-0 h-12 bg-background z-10" />
       </main>
     </div>
   );
