@@ -1,20 +1,10 @@
 import { ArrowRight, Droplets, Leaf, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import heroBg from "@/assets/hero-bg.jpg";
 import heroLogo from "@/assets/hero-logo.png";
+
 const Hero = () => {
-  const handleScrollToProducts = () => {
-    const element = document.querySelector("#produtos");
-    if (element) {
-      const headerOffset = 80;
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth"
-      });
-    }
-  };
   return <section id="inicio" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
       {/* Background Image */}
       <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{
@@ -62,9 +52,11 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-slide-up" style={{
           animationDelay: "0.2s"
         }}>
-            <Button variant="hero" size="xl" onClick={handleScrollToProducts} className="group">
-              Ver produtos
-              <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+            <Button variant="hero" size="xl" asChild className="group">
+              <Link to="/vitrine">
+                Ver vitrine
+                <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+              </Link>
             </Button>
             <Button variant="heroOutline" size="xl" asChild>
               <a href="https://wa.me/5519997867681" target="_blank" rel="noopener noreferrer">
