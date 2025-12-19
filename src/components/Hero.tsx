@@ -1,6 +1,7 @@
 import { ArrowRight, Droplets, Leaf, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroBg from "@/assets/hero-bg.jpg";
+import heroLogo from "@/assets/hero-logo.png";
 
 const Hero = () => {
   const handleScrollToProducts = () => {
@@ -47,9 +48,12 @@ const Hero = () => {
           </div>
 
           {/* Main Title - H1 */}
-          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-primary-foreground mb-6 animate-slide-up">
-            Construverde
-          </h1>
+          <div className="flex items-center justify-center gap-4 mb-6 animate-slide-up">
+            <img src={heroLogo} alt="Construverde Logo" className="h-16 md:h-20 lg:h-24 w-auto" />
+            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-primary-foreground">
+              Construverde
+            </h1>
+          </div>
 
           {/* Subtitle - H2 */}
           <h2 className="text-xl md:text-2xl text-primary-foreground/90 font-normal max-w-2xl mx-auto mb-10 animate-slide-up" style={{ animationDelay: "0.1s" }}>
