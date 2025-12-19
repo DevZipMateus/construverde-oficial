@@ -13,7 +13,7 @@ const Footer = () => {
             <img
               src={logo}
               alt="Construverde - Materiais de Construção"
-              className="h-12 w-auto brightness-0 invert"
+              className="h-20 w-auto brightness-0 invert"
             />
             <p className="text-primary-foreground/70">
               ConstruVerde – Soluções inteligentes para piscinas e para o meio ambiente.
