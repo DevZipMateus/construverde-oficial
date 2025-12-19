@@ -10,20 +10,21 @@ const Vitrine = () => {
   }, []);
 
   return (
-    <div className="h-screen w-full flex flex-col overflow-hidden">
+    <div className="h-screen w-full overflow-hidden">
       <Header />
       
-      {/* Spacer for fixed header */}
-      <div className="h-20 flex-shrink-0" />
-      
-      <main className="flex-1 overflow-hidden relative">
+      {/* Container do iframe com altura calculada */}
+      <main 
+        className="relative w-full"
+        style={{ height: 'calc(100vh - 80px)', marginTop: '80px' }}
+      >
         <iframe
           src="https://construrverde.egestor.com.br/vitrine/"
           title="Vitrine Construverde"
-          className="w-full h-full border-none"
+          className="absolute inset-0 w-full h-full border-none"
         />
         {/* Overlay para esconder badge do MonteSite */}
-        <div className="absolute bottom-0 left-0 right-0 h-12 bg-background z-10" />
+        <div className="absolute bottom-0 left-0 right-0 h-16 bg-background z-10" />
       </main>
     </div>
   );
