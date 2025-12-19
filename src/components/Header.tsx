@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Menu, X, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/hero-logo.png";
 const navItems = [{
   label: "Início",
   href: "#inicio"
