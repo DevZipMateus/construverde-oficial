@@ -13,7 +13,10 @@ const Vitrine = () => {
     <div className="h-screen w-full flex flex-col overflow-hidden">
       <Header />
       
-      <main className="flex-1 pt-20 overflow-hidden relative">
+      {/* Spacer for fixed header */}
+      <div className="h-20 flex-shrink-0" />
+      
+      <main className="flex-1 overflow-hidden relative">
         <iframe
           src="https://construrverde.egestor.com.br/vitrine/"
           title="Vitrine Construverde"
