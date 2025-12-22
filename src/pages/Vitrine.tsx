@@ -20,8 +20,6 @@ const Vitrine = () => {
           title="Vitrine Construverde"
           className="w-full h-full border-none"
         />
-        {/* Overlay para esconder badge do MonteSite */}
-        <div className="absolute bottom-0 left-0 right-0 h-16 bg-background z-10" />
       </div>
     </div>
   );
